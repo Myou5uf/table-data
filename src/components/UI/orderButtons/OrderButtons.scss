@@ -1,0 +1,23 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.orderButtons {
+    @include dFlex(flex, row, flex-start, center);
+
+    &__left {
+        @include dFlex(flex, row, flex-start, center);
+        margin-right: 25px;
+    }
+
+    &__doubleArrowBtnLeft {
+        margin-right: 7px;
+    }
+
+    &__right {
+        @include dFlex(flex, row, flex-start, center);
+    }
+
+    &__doubleArrowBtn {
+        margin-left: 7px;
+    }
+}

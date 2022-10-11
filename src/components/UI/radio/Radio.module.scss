@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.radio {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: -1;
+    opacity: 0;
+    transition: 1s all;
+
+    &__active{
+        margin-right: 23px;
+    }
+
+
+    /* стили при наведении курсора на радио */
+    &:not(:disabled):not(:checked) + label:hover::before {
+        border: 1px solid #6d5bd0;
+    }
+
+    /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+    &:focus:not(:checked) + label::before {
+        border-color: #8b83ba;
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии checked */
+    &:checked + label::before {
+        border: 0;
+        background-color: #6d5bd0;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
+
+    &:checked + label:hover::before {
+        //transform: scale(1.2);
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии disabled */
+    &:disabled + label::before {
+        border: 1.5px solid #8b83ba;
+    }
+}
+
+.radio + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #8b83ba;
+        border-radius: 50%;
+        margin-right: 12px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+}

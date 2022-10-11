@@ -1,0 +1,41 @@
+@import-normalize;
+@import "variables";
+@import "mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: $primary;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
+.error {
+
+    &__app {
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        @include setStyleText(600, 24px, 19px, #6E6893);
+        @include dFlex(flex, column, center, center);
+
+        h1 {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__user {
+        margin-top: 10px;
+        @include setStyleText(500, 12px, 15px, #d30000)
+        text-align: center;
+    }
+}

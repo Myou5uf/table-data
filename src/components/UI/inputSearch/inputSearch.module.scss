@@ -1,0 +1,38 @@
+@import "/src/styles/variables";
+@import "src/styles/mixins";
+
+.wrapper {
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+        background: url("/img/icons/Search.svg") no-repeat;
+    }
+}
+
+.inputSearch {
+    width: 365px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: $primary;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    @include setStyleText(500, 14px, 17px, #000);
+
+    &::-webkit-input-placeholder{
+        @include setStyleText(400, 12px, 15px, #6E6893);
+    }
+
+    &::-moz-placeholder{
+        @include setStyleText(400, 12px, 15px, #6E6893);
+    }
+
+    &:focus-visible {
+        border: 1px solid #6d5bd0;
+    }
+}

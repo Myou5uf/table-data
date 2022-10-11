@@ -1,0 +1,14 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.inputLabel{
+    @include dFlex(flex, column, center, flex-start);
+}
+
+
+
+.label{
+    display: inline;
+    @include setStyleText(400, 12px, 15px, #6E6893);
+    margin-bottom: 8px;
+}

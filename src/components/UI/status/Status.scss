@@ -1,0 +1,50 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.status {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px 5px;
+    color: #6E6893;
+    background-color: #F2F0F9;
+
+    &__circle {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #6E6893;
+        margin-right: 5px;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &_inactive {
+
+    }
+}
+
+.active {
+    @include setStyleStatus(#E6E6F2, #4A4AFF, #4A4AFF);
+}
+
+.inactive {
+    @include setStyleStatus(#F2F0F9, #6E6893, #6E6893);
+}
+
+.paid{
+    @include setStyleStatus(#CDFFCD, #007F00, #007F00);
+}
+
+.unpaid{
+    @include setStyleStatus(#FFECCC, #965E00, #CE8500);
+}
+
+.overdue{
+    @include setStyleStatus(#FFE0E0, #D30000, #D30000);
+}

@@ -1,0 +1,62 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+.modal{
+    @include dFlex(flex, row, center, center);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2;
+    transform: translateY(-50%) scale(0);
+    transition: .4s ease-in-out;
+
+    &_show{
+        transform: translateY(0%) scale(1);
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    &__container{
+        position: relative;
+        padding: 32px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+    }
+
+    &__title{
+        @include setStyleText(600, 12px, 15px, #6E6893);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 27px;
+    }
+
+    &__close{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 12px;
+        height: 12px;
+        background: url("/img/icons/CloseBtn.svg") no-repeat;
+    }
+
+    &__inputLabel{
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
+
+    &__btn{
+        margin-top: 24px;
+        width: 300px;
+        height: 47px;
+        padding: 15px 32px;
+        background: #4A4AFF;
+        border-radius: 6px;
+
+        @include setStyleText(500, 14px, 17px, #fff);
+    }
+}

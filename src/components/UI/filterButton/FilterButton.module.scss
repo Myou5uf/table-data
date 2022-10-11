@@ -1,0 +1,27 @@
+.btnFilter{
+    position: relative;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #c6c2de;
+    border-radius: 6px;
+    color: #25213b;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #f4f2ff !important;
+    }
+
+    &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('/img/icons/Filter.svg') no-repeat;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+    }
+}

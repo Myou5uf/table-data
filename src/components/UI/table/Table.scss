@@ -1,0 +1,161 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.table {
+    position: relative;
+
+    &__title {
+        margin-bottom: 32px;
+    }
+
+    &__content {
+        background: #FFFFFF;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    &__header {
+        padding: 16px 28px 14px 20px;
+        background-color: #fff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom: 1px solid #D9D5EC;
+
+        &-body {
+            @include dFlex(flex, row, space-between, center);
+        }
+
+        &-left {
+            @include dFlex(flex, row, space-between, center);
+        }
+
+        &-right {
+            @include dFlex(flex, row, space-between, center);
+        }
+    }
+
+    &__inputSearch{
+        margin-right: 10px;
+    }
+
+    &__filterParams {
+        @include dFlex(flex, row, space-between, center);
+        padding: 19px 32px 22px 20px;
+        border-bottom: 1px solid #D9D5EC;
+        background-color: #fff;
+    }
+
+    &__status {
+        @include dFlex(flex, row, flex-start, center);
+    }
+
+    &__text {
+        @include setStyleText(400, 16px, 19px, #A8A1D3);
+        margin-right: 55px;
+    }
+
+    &__radios{
+        @include dFlex(flex, row, flex-start, center);
+    }
+
+    &__radio_mr{
+        margin-right: 23px;
+    }
+
+    &__orderParams {
+        border-bottom: 1px solid #D9D5EC;
+        background-color: #fff;
+        height: 62px;
+        @include dFlex(flex, row, space-between, center);
+    }
+
+    &__columns {
+        @include dFlex(flex, row, space-between, center);
+        width: 100%;
+    }
+
+    &__item {
+        @include dFlex(flex, row, flex-start, center);
+        padding: 23px 65px;
+        border-right: 1px solid #D9D5EC;
+        text-transform: uppercase;
+
+        &_active {
+            background-color: $primary;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__columnTitle {
+        margin-right: 6px;
+    }
+
+    &__orderBtns {
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 23px;
+        border-right: 1px solid #D9D5EC;
+    }
+
+    &__headerColumns {
+        background: $primary;
+        padding: 13px 28px 12px 20px;
+        border-bottom: 1px solid #D9D5EC;
+
+        @include dFlex(flex, row, space-between, center);
+    }
+
+    &__mainContextMenu{
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        z-index: 1;
+        transform: translate(-50%, 0);
+    }
+
+    &__headerContextMenu{
+        position: absolute;
+        right: 0;
+        top: 40px;
+        z-index: 1;
+    }
+
+    &__rect {
+        margin-right: 6px;
+    }
+
+    &__footer {
+        @include dFlex(flex, row, flex-end, center);
+        padding: 18px 20px;
+        background-color: $primary;
+    }
+
+    &__swipingBtns {
+        button:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+
+    &__rowsPage {
+        @include dFlex(flex, row, space-between, center);
+        margin-right: 50px;
+    }
+
+    &__footerText {
+        @include setStyleText(600, 12px, 14px, #6E6893);
+        margin-right: 11px;
+    }
+
+    &__totalUser {
+        margin-right: 50px;
+    }
+
+    &__loader{
+        @include dFlex(flex, row, center, center)
+    }
+
+}

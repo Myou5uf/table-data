@@ -1,0 +1,34 @@
+@import "src/styles/variables";
+
+@mixin dFlex($d, $fd, $jc, $ai) {
+    display: $d;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin setStyleText($fw, $fs, $lh, $color){
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $color;
+}
+
+@mixin switchesStyle {
+    background: $primary;
+    border-radius: 6px;
+}
+
+@mixin setStyleTableColumns($width, $mr){
+    width: $width;
+    margin-right: $mr;
+}
+
+@mixin setStyleStatus($bgEllipse, $colorText, $bgCircle){
+    background-color: $bgEllipse;
+    color: $colorText;
+
+    .status__circle {
+        background-color: $bgCircle;
+    }
+}

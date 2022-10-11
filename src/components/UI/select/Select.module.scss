@@ -1,0 +1,44 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        display: block;
+        width: 8px;
+        height: 5px;
+        //border-style: solid;
+        //border-width: 12px 6px 0 6px;
+        //border-color: #6d5bd0 transparent transparent transparent;
+        pointer-events: none;
+        background: url("/img/icons/Down.svg");
+    }
+}
+
+.select {
+    width: 520px;
+    height: 39px;
+    appearance: none;
+    outline: none;
+    border: 1px solid #C6C2DE;
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    @include setStyleText(400, 16px, 19px, #000);
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px #6d5bd0, 0 0 1px #6d5bd0;
+    }
+    &:hover{
+        box-shadow: 0 0 0 1px #6d5bd0, 0 0 1px #6d5bd0;
+    }
+
+}

@@ -1,0 +1,111 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.contextMenu {
+
+    &_row{
+        @include dFlex(flex, row, space-between, center);
+    }
+
+    &__column{
+        @include dFlex(flex, column, space-between, center);
+    }
+
+    &_light {
+        width: 155px;
+        height: 75px;
+        padding: 10px;
+        transform: translate(45%, -80%) scale(0);
+        transition: .4s ease-in-out;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+
+        .contextMenu {
+            &__edit {
+                @include setStyleText(400, 14px, 17px, #25213B);
+                letter-spacing: 0.05em;
+                background-color: transparent;
+            }
+
+            &__line {
+                width: 135px;
+                height: 1px;
+                background-color: #F2F0F9;
+                margin: 10px 0;
+            }
+
+            &__delete {
+                @include setStyleText(400, 14px, 17px, #D30000);
+                letter-spacing: 0.05em;
+                background-color: transparent;
+            }
+
+            &_show {
+                transform: translate(-50%, 0%) scale(1);
+            }
+        }
+
+        &_show {
+            transform: translate(0, 0) scale(1);
+        }
+    }
+
+    &_dark{
+        width: 235px;
+        height: 47px;
+        padding: 15px 32px;
+        transform: translate(-50%, 100%) scale(0);
+        transition: .4s ease-in-out;
+        background: #4A4AFF;
+        border-radius: 35px;
+
+        .contextMenu {
+            &__edit {
+                position: relative;
+                background-color: transparent;
+                @include setStyleText(500, 14px, 17px, #fff);
+                padding-left: 28px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 16px;
+                    height: 16px;
+                    background: url("/img/icons/editLight.svg") no-repeat;
+                }
+
+            }
+
+            &__line {
+                width: 1px;
+                height: 17px;
+                background: #D9D5EC;
+            }
+
+            &__delete {
+                position: relative;
+                @include setStyleText(500, 14px, 17px, #fff);
+                background-color: transparent;
+                padding-left: 28px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 16px;
+                    height: 16px;
+                    background: url("/img/icons/delete.svg") no-repeat;
+                }
+            }
+        }
+
+        &_show {
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+}

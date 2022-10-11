@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.arrowBtn {
+    @include dFlex(flex, row, center, center);
+    @include switchesStyle();
+    padding: 11px;
+    flex: 0 0 auto;
+}

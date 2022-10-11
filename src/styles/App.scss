@@ -1,0 +1,178 @@
+@import "nullstyle";
+@import "variables";
+@import "mixins";
+
+.App {
+    max-width: 1100px;
+    margin: 80px auto;
+}
+
+.dFlexStart {
+    @include dFlex(flex, row, flex-start, center);
+}
+
+.user {
+    border-bottom: 1px solid #D9D5EC;
+    background-color: #fff;
+
+    &__info {
+        @include dFlex(flex, row, space-between, center);
+        padding: 11px 28px 11px 20px;
+    }
+
+    &__edit {
+        padding: 16px 28px 16px 24px;
+        border-top: 1px solid #D9D5EC;
+
+        &_active {
+            display: block !important;
+        }
+    }
+
+    &__form {
+        justify-content: space-between !important;
+    }
+
+    &__status {
+        padding-left: 12px;
+    }
+
+    &__select {
+        width: 229px !important;
+    }
+
+    &__input {
+        width: 200px !important;
+    }
+
+    &__radio {
+        &_active {
+            margin-right: 23px;
+        }
+    }
+
+    &__paymentStatus {
+        padding-left: 36px;
+    }
+
+    &__email {
+        display: inline-block;
+    }
+
+    &__currency {
+        display: inline-block;
+    }
+
+    &__contextMenu {
+        position: absolute;
+        right: 0;
+        top: 40px;
+        z-index: 1;
+    }
+
+    &-enter {
+        opacity: 0;
+    }
+
+    &-enter-active {
+        opacity: 1;
+        transition: opacity 500ms ease-in;
+    }
+
+    &-exit {
+        opacity: 1;
+    }
+
+    &-exit-active {
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+    }
+
+}
+
+.title {
+    @include setStyleText(700, 14px, 17px, #6E6893);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.column {
+    @include dFlex(flex, row, flex-start, center);
+
+    &__check {
+        @include setStyleTableColumns(20px, 65px);
+    }
+
+    &__name {
+        @include setStyleTableColumns(228px, 31px);
+    }
+
+    &__userStatus {
+        @include setStyleTableColumns(352px, 5px);
+    }
+
+    &__paymentStatus {
+        @include setStyleTableColumns(266px, 5px);
+    }
+
+    &__amount {
+        @include setStyleTableColumns(108px, 27px);
+    }
+
+    &__control {
+        position: relative;
+    }
+}
+
+.rect {
+    width: 2px;
+    height: 14px;
+    background: #6e6893;
+}
+
+.columnTitle {
+    @include setStyleText(600, 12px, 15px, #6E6893);
+    text-transform: uppercase;
+}
+
+.wrapper {
+    @include dFlex(flex, column, initial, center);
+}
+
+.name {
+    @include setStyleText(500, 14px, 17px, #25213B);
+}
+
+.email {
+    @include setStyleText(400, 14px, 17px, #6E6893);
+}
+
+.lastLogin {
+    @include setStyleText(500, 12px, 15px, #6E6893);
+}
+
+.paymentStatus {
+    @include setStyleText(500, 12px, 15px, #25213B);
+}
+
+.amount {
+    @include setStyleText(500, 14px, 17px, #25213B);
+    text-transform: uppercase;
+}
+
+.currency {
+    @include setStyleText(400, 12px, 15px, #6E6893);
+    letter-spacing: 0.05em;
+}
+
+.show {
+    display: flex !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
