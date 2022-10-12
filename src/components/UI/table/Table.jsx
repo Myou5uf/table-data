@@ -17,11 +17,16 @@ const Table = ({users, fetchUsers, title, filterParams, setFilterParams, isUsers
     const [visibleOrderColumns, setVisibleOrderColumns] = useState(false);
     const [visibleModal, setVisibleModal] = useState(false);
     const [checkHeader, setCheckHeader] = useState(false);
-
+    const [visibleColumn, setVisibleColumn] = useState({
+        name: true,
+        userStatus: true,
+        paymentStatus: true,
+        amount: true
+    });
     const visibleFilterParams = () => {
         setVisibleFilter(!visibleFilter)
         setFilterParams({...filterParams, paymentStatus: "", userStatus: ""})
-    }
+    };
 
     return (
         <div className="table">
@@ -46,8 +51,16 @@ const Table = ({users, fetchUsers, title, filterParams, setFilterParams, isUsers
                     filterParams={filterParams}
                     setFilterParams={setFilterParams}
                 />
-                <OrderParams visibleOrderColumns={visibleOrderColumns}/>
-                <HeaderColumns checkHeader={checkHeader} setCheckHeader={() => setCheckHeader(!checkHeader)}/>
+                <OrderParams
+                    visibleOrderColumns={visibleOrderColumns}
+                    visibleColumn={visibleColumn}
+                    setVisibleColumn={setVisibleColumn}
+                />
+                <HeaderColumns
+                    checkHeader={checkHeader}
+                    setCheckHeader={() => setCheckHeader(!checkHeader)}
+                    visibleColumn={visibleColumn}
+                />
                 <div className="table__users">
                     {isUsersLoading
                         ? <div className="table__loader">
@@ -65,6 +78,7 @@ const Table = ({users, fetchUsers, title, filterParams, setFilterParams, isUsers
                                         fetchUsers={fetchUsers}
                                         pagination={pagination}
                                         checkBoxHeader={checkHeader}
+                                        visibleColumn={visibleColumn}
                                     />
                                 </CSSTransition>
                             )}

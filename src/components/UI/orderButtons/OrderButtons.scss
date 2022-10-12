@@ -3,7 +3,7 @@
 
 .orderButtons {
     @include dFlex(flex, row, flex-start, center);
-
+    flex-grow: 1;
     &__left {
         @include dFlex(flex, row, flex-start, center);
         margin-right: 25px;

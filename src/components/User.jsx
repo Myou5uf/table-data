@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import UserEdit from "./UserEdit";
 import UserInfo from "./UserInfo";
 
-const User = ({user, fetchUsers, pagination, checkBoxHeader}) => {
+const User = ({user, fetchUsers, pagination, checkBoxHeader, visibleColumn}) => {
 
     const [visibleUserEdit, setVisibleUserEdit] = useState(false);
     const [visibleContextMenu, setVisibleContextMenu] = useState(false);
@@ -21,6 +21,7 @@ const User = ({user, fetchUsers, pagination, checkBoxHeader}) => {
                 setVisibleContextMenu={setVisibleContextMenu}
                 checkBoxHeader={checkBoxHeader}
                 fetchUsers={fetchUsers}
+                visibleColumn={visibleColumn}
             />
             <UserEdit
                 user={user}
